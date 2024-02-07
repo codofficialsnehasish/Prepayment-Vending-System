@@ -7,10 +7,6 @@
     }
 
     .condel:after {
-        /* content: "Delete";
-        position: absolute;
-        left: 5px;
-        top: 4px; */
         content: "Remove";
         position: absolute;
         left: 0px;
@@ -33,16 +29,9 @@
             @include("admin/dash/left_side_bar")
             <!-- Left Sidebar End -->
 
-            
-
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
             <div class="main-content">
-
                 <div class="page-content">
                     <div class="container-fluid">
-
                         <!-- start page title -->
                         <div class="page-title-box">
                             <div class="row align-items-center">
@@ -59,8 +48,8 @@
                                             <a href="javascript:void(0);" onclick="get_price_data();" class="btn btn-primary  dropdown-toggle" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center" aria-expanded="false">
                                                 <i class="fas fa-plus me-2"></i> New
                                             </a>
-                                            <a href="javascript:void(0);" data="" id="editid" onclick="get_price_data(this.value);" class="btn btn-primary  dropdown-toggle" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center" aria-expanded="false">
-                                                <i class="fas fa-plus me-2"></i> Edit
+                                            <a href="javascript:void(0);" data="" id="editid" onclick="get_price_data(this.value);" class="btn btn-success  dropdown-toggle" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center" aria-expanded="false">
+                                                <i class="fas fa-pencil-alt me-2"></i> Edit
                                             </a>
                                             <div class="condel btn btn-danger text-center"><input type="text" onclick="confirmDelete(this.value);" value=""  id="delid"></div>
                                             <!-- <label for="delid" class="btn btn-primary"><i class="fas fa-plus me-2"></i> Delete</label> -->
@@ -125,24 +114,21 @@
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
                                                 <tr>
-                                                    <th>SL. NO</th>
+                                                    <th>ID</th>
                                                     <th>Price</th>
                                                     <th>Currency</th>
                                                     <th>Tax</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @php $i = 1 @endphp
                                                 @foreach($alldata as $c)
                                                 <tr onclick="getrow_data(this.id)" style="background-color:;" id="{{$c->id}}">
-                                                    <td>@php echo $i++ @endphp</td>    
+                                                    <td>{{$c->id}}</td>    
                                                     <td>{{$c->price}}</td>
                                                     <td>{{$c->currency}}</td>
                                                     <td>{{$c->tax}}</td>
                                                 </tr>
-                                               
                                                 @endforeach
-                                                
                                             </tbody>
                                         </table>
                                     </div>

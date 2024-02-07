@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Customer_manage;
 use App\Http\Controllers\Admin\Excelupload;
 use App\Http\Controllers\Admin\Meter_type_master;
 use App\Http\Controllers\Admin\Price_management;
+use App\Http\Controllers\Admin\Open_account;
 
 use App\Http\Controllers\Site\Home;
 
@@ -92,3 +93,16 @@ Route::get("/price-management",[Price_management::class,"price_manage"]);
 Route::post("/price-data",[Price_management::class,"add_price_data"]);
 Route::get("/price-manage-data/{id}",[Price_management::class,"price_management_data"]);
 Route::get("/price-management/delete/{id}",[Price_management::class,"delete_price_manage"]);
+
+
+//======================= Open Accounts Routes ======================
+
+Route::get("/account-contents",[Open_account::class,"account_contents"]);
+Route::post("/account-data",[Open_account::class,"add_account_contents"]);
+Route::get("/get-edit-data/{id}",[Open_account::class,"get_edit_data"]);
+Route::get("/account-contents/delete/{id}",[Open_account::class,"delete_account_data"]);
+
+Route::post("/import-account",[Excelupload::class,"import_account_excel"]);
+
+
+

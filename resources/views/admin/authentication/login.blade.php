@@ -10,7 +10,7 @@
                         <div class="card-box shadow-none p-4">
                             <div class="p-2">
                                 <div class="text-center mt-4">
-                                    <a href="/" style="font-size:40px;font-weight: 600;letter-spacing: 4px;"><img src="{{ asset('/site_data_images')}}/{{get_logo()}}" alt="Logo"></a>
+                                    <a href="/" style="font-size:40px;font-weight: 600;letter-spacing: 4px;"><img src="{{ asset('/site_data_images')}}/{{get_logo()}}" alt="Logo" style="width: 238px;"></a>
                                 </div>
                                 <h4 class="font-size-18 mt-2 text-center" style="color:black!important">Welcome Back !</h4>
                                 <p class="text-muted text-center" style="color:black!important">Sign in to continue to {{ app_name() }}.</p>

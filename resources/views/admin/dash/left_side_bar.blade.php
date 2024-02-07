@@ -19,13 +19,13 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="fas fa-business-time"></i>
-                        <span>Daily Business <span class="badge rounded-pill bg-danger" style="font-size:10px;">Coming</span></span>
+                        <span>Daily Business</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="javascript: void(0);">Vending</a></li>
                         <li><a href="javascript: void(0);">Clear Temper</a></li>
                         <li><a href="javascript: void(0);">Clear Credit</a></li>
-                        <li><a href="javascript: void(0);">Open an Account</a></li>
+                        <li><a href="{{url('/account-contents')}}">Open an Account &nbsp;&nbsp;<span class="badge rounded-pill bg-danger">New</span></a></li>
                     </ul>
                 </li>
                 <li>

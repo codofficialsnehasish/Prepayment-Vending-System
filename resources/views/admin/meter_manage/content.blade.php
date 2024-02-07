@@ -59,8 +59,8 @@
                                             <a href="javascript:void(0);" onclick="get_meter_data();" class="btn btn-primary  dropdown-toggle" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center" aria-expanded="false">
                                                 <i class="fas fa-plus me-2"></i> New
                                             </a>
-                                            <a href="javascript:void(0);" data="" id="editid" onclick="get_meter_data(this.value);" class="btn btn-primary  dropdown-toggle" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center" aria-expanded="false">
-                                                <i class="fas fa-plus me-2"></i> Edit
+                                            <a href="javascript:void(0);" data="" id="editid" onclick="get_meter_data(this.value);" class="btn btn-success dropdown-toggle" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center" aria-expanded="false">
+                                                <i class="fas fa-pencil-alt me-2"></i> Edit
                                             </a>
                                             <div class="condel btn btn-danger text-center"><input type="text" onclick="confirmDelete(this.value);" value=""  id="delid"></div>
                                             <!-- <label for="delid" class="btn btn-primary"><i class="fas fa-plus me-2"></i> Delete</label> -->

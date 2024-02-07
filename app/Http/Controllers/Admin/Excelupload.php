@@ -90,4 +90,45 @@ class Excelupload extends Controller
             return redirect()->back()->with('error', 'No Data Avaliable on Excel.');
         }
     }
+
+
+    function import_account_excel(Request $request){
+        $this->validate($request, [
+            'select_file'  => 'required|mimes:xls,xlsx'
+        ]);
+        $path = ($request->file('select_file')->getPathName());
+        $data = Excel::toArray([], $request->file('select_file'));
+        // print_r($data);
+        // die;
+        if(count($data) > 0){
+            $count = 0;
+            foreach($data as $value){
+                foreach($value as $row){
+                    if($count++ < 2){
+                        continue;
+                    }else{
+                        if(!empty(Meter::where("meter_no",'=',$row[1])->get()[0]->id)){
+                            $insert_data[] = array(
+                                'customer_id' => $row[0],
+                                'meter_id' => Meter::where("meter_no",'=',$row[1])->get()[0]->id,
+                                'price_id' => $row[2],
+                            );
+                        }else{
+                            return redirect()->back()->with(['error'=>'Meter not avaliable']);
+                        }
+                    }
+                }
+            }
+            if(!empty($insert_data)){
+                $res = DB::table('account')->insert($insert_data);
+            }
+            if($res){
+                return redirect()->back()->with('success', 'Excel Data Imported successfully.');
+            }else{
+                return redirect()->back()->with('error', 'Excel Data are not Imported.');
+            }
+        }else{
+            return redirect()->back()->with('error', 'No Data Avaliable on Excel.');
+        }
+    }
 }
